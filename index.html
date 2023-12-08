@@ -1,17 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Uzum Website</title>
-        <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="/styles/style.css" />
-    </head>
-    <body>
-        <script type="module" src="/scripts/main.js"></script>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Uzum Website</title>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/styles/main.scss" />
+	</head>
+	<body>
+		<header>
+			<section class="header header__first">
+				<div class="wrap">
+					<div class="geo">
+						<div class="geolocation">
+							<span class="material-symbols-outlined"> location_on </span>
+							<p>Город: <span data-city></span></p>
+						</div>
+
+						<div class="pickup">
+							<a href="#">Пункты выдачи</a>
+						</div>
+					</div>
+
+					<div class="free-day">
+						<p>Доставим ваш заказ бесплатно -- всего за 1 день</p>
+					</div>
+
+					<div class="localization">
+						<div class="faq">
+							<a href="#">Вопрос-ответ</a>
+						</div>
+
+						<div class="my-orders">
+							<a href="#">Мои заказы</a>
+						</div>
+
+						<div class="lang">
+							<div class="lang__flag"></div>
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="header header__second">
+				<div class="wrap">
+					<div class="logo">
+						<a href="/">
+							<img src="/images/logo.svg" alt="logo" />
+						</a>
+					</div>
+
+					<div class="dropdown">
+						<button>
+							<div class="catalog-icon">
+								<div class="rect">
+									<div class="inner"></div>
+								</div>
+
+								<div class="top"></div>
+								<div class="bottom"></div>
+							</div>
+							<span>Каталог</span>
+						</button>
+					</div>
+
+					<div class="search">
+						<div class="searchQuery">
+							<input
+								type="search"
+								name="searchItem"
+								placeholder="Искать товары и категории"
+							/>
+							<label class="searchIcon">
+								<span class="material-symbols-outlined"> search </span>
+							</label>
+						</div>
+
+						<div class="searchResults">
+							<ul class="results"></ul>
+						</div>
+					</div>
+
+					<div class="account">
+						<span class="material-symbols-outlined"> person </span>
+						<p>Войти</p>
+					</div>
+
+					<div class="liked">
+						<span class="material-symbols-outlined">favorite</span>
+						<p>Избранное</p>
+					</div>
+
+					<div class="cart">
+						<span class="material-symbols-outlined">shopping_cart</span>
+						<p>Корзина</p>
+					</div>
+				</div>
+			</section>
+			<section class="header header__third">
+				<div class="wrap">
+					<div class="menu">
+						<div class="menu__item">
+							<img src="/images/union.png" alt="Рассрочка">
+							Рассрочка
+						</div>
+
+						<ul class="menu-list">
+
+						</ul>
+					</div>
+				</div>
+			</section>
+		</header>
+
+		<main>
+			<section class="banner">
+				<div class="wrap">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+
+						</div>
+
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="items">
+				<div class="wrap">
+					<button data-aos="fade-up" class="toUP">
+						<span class="material-symbols-outlined"> arrow_upward </span>
+					</button>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="wrap"></div>
+		</footer>
+
+		<script type="module" src="/scripts/main.js"></script>
+	</body>
 </html>

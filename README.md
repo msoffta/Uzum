@@ -6,6 +6,9 @@ Used Libraries
 - [imask](https://imask.js.org/guide.html)
 - [swiper](https://swiperjs.com/)
 - [js-image-zoomer](https://www.cssscript.com/zoom-image-on-hover/)
+- [json-server](https://github.com/typicode/json-server)
+- [concurrently](https://www.npmjs.com/package/concurrently)
+- [aos](https://michalsnik.github.io/aos/)
 ===============
 
 Used Fonts
