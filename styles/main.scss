@@ -18,5 +18,11 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --text-primary: #1f2026;
+    --text-secondary: #8b8e99;
+}
 
+@import "./src/header.scss";
+@import "./src/main.scss";
 @import "./src/media.scss";

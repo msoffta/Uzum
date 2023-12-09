@@ -5,8 +5,14 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Uzum Website</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="/styles/main.scss" />
@@ -18,7 +24,7 @@
 					<div class="geo">
 						<div class="geolocation">
 							<span class="material-symbols-outlined"> location_on </span>
-							<p>Город: <span data-city></span></p>
+							<a href="#">Город: <span data-city>Ташкент</span></a>
 						</div>
 
 						<div class="pickup">
@@ -27,7 +33,7 @@
 					</div>
 
 					<div class="free-day">
-						<p>Доставим ваш заказ бесплатно -- всего за 1 день</p>
+						<p>Доставим ваш заказ бесплатно — всего за 1 день!</p>
 					</div>
 
 					<div class="localization">
@@ -39,10 +45,10 @@
 							<a href="#">Мои заказы</a>
 						</div>
 
-						<div class="lang">
+						<a href="#" class="lang">
 							<div class="lang__flag"></div>
-							<span></span>
-						</div>
+							<span>Русский</span>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -54,19 +60,17 @@
 						</a>
 					</div>
 
-					<div class="dropdown">
-						<button>
-							<div class="catalog-icon">
-								<div class="rect">
-									<div class="inner"></div>
-								</div>
-
-								<div class="top"></div>
-								<div class="bottom"></div>
+					<button class="dropdown">
+						<div class="catalog-icon">
+							<div class="rect">
+								<div class="inner"></div>
 							</div>
-							<span>Каталог</span>
-						</button>
-					</div>
+
+							<div class="top"></div>
+							<div class="bottom"></div>
+						</div>
+						<span>Каталог</span>
+					</button>
 
 					<div class="search">
 						<div class="searchQuery">
@@ -75,9 +79,9 @@
 								name="searchItem"
 								placeholder="Искать товары и категории"
 							/>
-							<label class="searchIcon">
+							<button class="searchIcon">
 								<span class="material-symbols-outlined"> search </span>
-							</label>
+							</button>
 						</div>
 
 						<div class="searchResults">
@@ -103,16 +107,7 @@
 			</section>
 			<section class="header header__third">
 				<div class="wrap">
-					<div class="menu">
-						<div class="menu__item">
-							<img src="/images/union.png" alt="Рассрочка">
-							Рассрочка
-						</div>
-
-						<ul class="menu-list">
-
-						</ul>
-					</div>
+					<ul class="menu-list"></ul>
 				</div>
 			</section>
 		</header>
@@ -121,9 +116,7 @@
 			<section class="banner">
 				<div class="wrap">
 					<div class="swiper">
-						<div class="swiper-wrapper">
-
-						</div>
+						<div class="swiper-wrapper"></div>
 
 						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
@@ -135,7 +128,7 @@
 			<section class="items">
 				<div class="wrap">
 					<button data-aos="fade-up" class="toUP">
-						<span class="material-symbols-outlined"> arrow_upward </span>
+						<span class="material-symbols-outlined"> expand_less </span>
 					</button>
 				</div>
 			</section>

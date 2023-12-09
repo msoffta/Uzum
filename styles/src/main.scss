@@ -1,0 +1,23 @@
+main {
+
+	.items {
+
+		.toUP {
+			bottom: 25px;
+			right: 25px;
+			// position: fixed;
+			z-index: 2;
+			background: rgb(112, 0, 255);
+
+			width: 54px;
+			height: 54px;
+			border-radius: 50%;
+			border: 0;
+
+			span {
+				color: #fff;
+				font-size: 45px;
+			}
+		}
+	}
+}
