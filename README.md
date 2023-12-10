@@ -18,5 +18,5 @@ Used Fonts
 
 Used Icons
 ==========
-- [Material Icons](https://fonts.google.com/icons)
+- [Material Icons (Outlined)](https://fonts.google.com/icons)
 ==========

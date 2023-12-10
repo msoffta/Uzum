@@ -1,26 +1,29 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    outline: none;
-    text-decoration: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
 }
 
 .wrap {
-    width: 80%;
+	max-width: 1240px;
+	width: 95%;
+
     margin: 0 auto;
 }
 
-img { max-width: 100% }
-
+img {
+	max-width: 100%;
+}
 
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 :root {
-    --text-primary: #1f2026;
-    --text-secondary: #8b8e99;
+	--text-primary: #1f2026;
+	--text-secondary: #8b8e99;
 }
 
 @import "./src/header.scss";
