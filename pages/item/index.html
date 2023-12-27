@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title></title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<link rel="stylesheet" href="/styles/main.scss" />
+		<link rel="stylesheet" href="/styles/pages/item/main.scss 	" />
+	</head>
+	<body>
+		<header></header>
+		<main>
+			<section class="item">
+				<div class="wrap">
+					<div class="swipers">
+						<div class="verticalSwiper">
+							<div class="swiper-wrapper"></div>
+						</div>
+						<div class="horizontalSwiper">
+							<div class="swiper-wrapper"></div>
+							<div class="swiper-pagination"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+
+					<div class="info">
+						<h1 class="title" data-title></h1>
+
+						<div class="cost-wrapper">
+							<p class="cost" data-cost__main=""></p>
+							<span class="sale" data-cost__sale=""></span>
+						</div>
+
+						<div class="rating">
+							<img src="/images/rating.svg" alt="rating" />
+							<span class="reviews" data-rating=""></span>
+						</div>
+
+						<label for="counter">
+							<span>Количество:</span>
+							<div class="counter">
+								<div class="counter__control">
+									<button class="counter__btn counter__btn--minus">-</button>
+									<input
+										type="number"
+										id="counter"
+										class="counter__input"
+										value="1"
+									/>
+									<button class="counter__btn counter__btn--plus">+</button>
+								</div>
+
+								<span
+									class="counter__available"
+									data-counter__available=""
+								></span>
+							</div>
+						</label>
+
+						<hr />
+
+						<p class="description" data-description=""></p>
+
+						<div class="buttons">
+							<button class="addCart">Добавить в корзину</button>
+							<button class="addFavorite">Добавить в избранное</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="wrap description-wrap">
+					<div class="description">
+						<h2>Описание товара</h2>
+
+						<p class="description__text" data-description__text=""></p>
+					</div>
+				</div>
+			</section>
+
+			<section class="place sameItems">
+				<div class="wrap">
+					<h2 class="place__title">Похожие товары</h2>
+
+					<div class="place__items">
+
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer></footer>
+		<div class="modals"></div>
+		<script type="module" src="./script.js"></script>
+	</body>
+</html>

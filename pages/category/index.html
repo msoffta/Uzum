@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title></title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<link rel="stylesheet" href="/styles/main.scss" />
+		<link rel="stylesheet" href="/styles/pages/category/main.scss" />
+	</head>
+	<body>
+		<header></header>
+		<main>
+			<div class="wrap">
+				<aside>
+					<form class="filters">
+						<section class="sel price">
+							<h3 class="sel__title">Цена</h3>
+
+							<div class="sel__range">
+								<div class="input-wrapper">
+									<label for="sel-from__price">От</label>
+									<input
+										type="number"
+										name="from"
+										id="sel-from__price"
+										placeholder="1000"
+										value="1000"
+									/>
+								</div>
+								<div class="input-wrapper">
+									<label for="sel-to__price">До</label>
+									<input
+										type="number"
+										name="to"
+										id="sel-to__price"
+										placeholder="50000000"
+										value="50000000"
+									/>
+								</div>
+							</div>
+						</section>
+
+						<section class="sel colors">
+							<h3 class="sel__title">Цвет</h3>
+							<ul class="sel__list"></ul>
+						</section>
+
+						<section class="sel sortby">
+							<h3 class="sel__title">Сортировать по</h3>
+
+							<button class="dropdown" type="button">
+								<span data-sort="default">По умолчанию</span>
+								<div class="dropdown_options">
+									<ul class="dropdown__list">
+										<li data-sort="default" class="dropdown__option">
+											<span data-sort="default">По умолчанию</span>
+										</li>
+
+										<li data-sort="price_asc" class="dropdown__option">
+											<span>По возрастанию цены</span>
+										</li>
+
+										<li data-sort="price_desc" class="dropdown__option">
+											<span>По убыванию цены</span>
+										</li>
+
+										<li data-sort="alpha" class="dropdown__option">
+											<span>По алфавиту</span>
+										</li>
+
+										<li data-sort="rating" class="dropdown__option">
+											<span>По рейтингу</span>
+										</li>
+									</ul>
+								</div>
+							</button>
+						</section>
+
+						<button class="reset" type="reset">Очистить</button>
+					</form>
+				</aside>
+				<div class="items"></div>
+			</div>
+		</main>
+		<footer></footer>
+
+		<div class="modals"></div>
+		<script type="module" src="./script.js"></script>
+	</body>
+</html>

@@ -24,7 +24,7 @@ export function renderPlaces(types) {
 			wrap.append(placeTitle, placeItems);
 			placeTitle.append(placeArrowRightIcon);
 
-			places[type] = place;
+			places[type] = placeItems;
 			document.querySelector(".items").append(place);
 		}
 	}

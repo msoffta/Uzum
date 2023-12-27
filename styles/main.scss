@@ -10,7 +10,7 @@
 	max-width: 1240px;
 	width: 95%;
 
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 img {
@@ -19,13 +19,24 @@ img {
 
 html {
 	scroll-behavior: smooth;
+	font-family: Inter;
 }
 
-:root {
-	--text-primary: #1f2026;
-	--text-secondary: #8b8e99;
+body {
+	&.modal_lock {
+		height: 100vh;
+		overflow: hidden;
+	}
+	position: relative;
+
+	overflow-x: hidden;
+	width: 100%;
+	margin: 0 auto;
 }
 
+@import "./src/root.scss";
 @import "./src/header.scss";
 @import "./src/main.scss";
+@import "./src/footer.scss";
+@import "./src/modals.scss";
 @import "./src/media.scss";

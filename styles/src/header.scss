@@ -175,6 +175,7 @@ header {
 			border-radius: 4px;
 
 			margin-right: 7px;
+			transition: all 0.2s;
 
 			.catalog-icon {
 				width: 24px;
@@ -251,6 +252,59 @@ header {
 				}
 			}
 
+			&.show {
+				.rect {
+					background: var(--icon-accented);
+					border-bottom-width: 0;
+					border-top: 2px solid var(--icon-accented);
+					height: 0;
+					top: 50%;
+					-webkit-transform: translate(-50%, -1px) rotate(-45deg);
+					transform: translate(-50%, -1px) rotate(-45deg);
+					-webkit-transform-origin: 50% 50%;
+					transform-origin: 50% 50%;
+					-webkit-transition: all 0.11s ease-in,
+						border-bottom-width 0.022000000000000002s 0.08800000000000001s,
+						-webkit-transform 0.11s ease-in 0.11s;
+					transition: all 0.11s ease-in,
+						border-bottom-width 0.022000000000000002s 0.08800000000000001s,
+						-webkit-transform 0.11s ease-in 0.11s;
+					transition: all 0.11s ease-in, transform 0.11s ease-in 0.11s,
+						border-bottom-width 0.022000000000000002s 0.08800000000000001s;
+					transition: all 0.11s ease-in, transform 0.11s ease-in 0.11s,
+						border-bottom-width 0.022000000000000002s 0.08800000000000001s,
+						-webkit-transform 0.11s ease-in 0.11s;
+				}
+
+				.top {
+					opacity: 0;
+					top: 50%;
+					-webkit-transition: all 0.11s ease-in, opacity 0.001ms ease-in 0.11s;
+					transition: all 0.11s ease-in, opacity 0.001ms ease-in 0.11s;
+				}
+
+				.bottom {
+					border-radius: 2px;
+					top: 50%;
+					-webkit-transform: translate(-50%, -1px) rotate(45deg);
+					transform: translate(-50%, -1px) rotate(45deg);
+					-webkit-transform-origin: 50% 50%;
+					transform-origin: 50% 50%;
+					-webkit-transition: all 0.11s ease-in,
+						border-radius 7.700000000000001ms 0.08800000000000001s,
+						-webkit-transform 0.11s ease-in 0.11s;
+					transition: all 0.11s ease-in,
+						border-radius 7.700000000000001ms 0.08800000000000001s,
+						-webkit-transform 0.11s ease-in 0.11s;
+					transition: all 0.11s ease-in, transform 0.11s ease-in 0.11s,
+						border-radius 7.700000000000001ms 0.08800000000000001s;
+					transition: all 0.11s ease-in, transform 0.11s ease-in 0.11s,
+						border-radius 7.700000000000001ms 0.08800000000000001s,
+						-webkit-transform 0.11s ease-in 0.11s;
+					width: 18.5px;
+				}
+			}
+
 			span {
 				font-size: 14px;
 				font-family: Inter;
@@ -271,6 +325,8 @@ header {
 			flex-grow: 1;
 			margin-right: 24px;
 
+			position: relative;
+
 			.searchQuery {
 				width: 100%;
 				height: 40px;
@@ -285,7 +341,7 @@ header {
 					color: #1f2026;
 					font-family: Inter;
 					font-size: 0.875rem;
-					font-family: 400;
+					font-weight: 400;
 					background: #fff;
 					border: 1px solid rgb(54, 54, 64, 0.2);
 					border-radius: 4px;
@@ -313,6 +369,92 @@ header {
 					background: #f2f4f7;
 					border: 1px solid rgb(54, 54, 64, 0.2);
 					border-radius: 0 4px 4px 0;
+				}
+			}
+
+			.searchResults {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				z-index: 10;
+
+				background: #fff;
+				border: 1px solid rgb(54, 54, 64, 0.2);
+				border-top: none;
+				border-radius: 4px;
+				box-shadow: 0 0 0 0 rgb(54, 54, 64, 0.2), 0 0 0 0 rgb(54, 54, 64, 0.8);
+
+				display: flex;
+				flex-direction: column;
+
+				list-style: none;
+
+				border-bottom-left-radius: 12px;
+				border-bottom-right-radius: 12px;
+
+				max-height: 500px;
+				overflow-y: auto;
+
+				li {
+					padding: 12px 51px 12px 50px;
+					user-select: none;
+					position: relative;
+
+					color: var(--text-primary);
+					font-family: Inter;
+					font-size: 0.875rem;
+					font-weight: 400;
+					line-height: 1.4em;
+
+					transition: all 0.2s ease;
+
+					.highlight {
+						all: unset;
+						font-weight: 600;
+					}
+
+					&:hover:not(.tupi_class) {
+						background-color: var(--field-primary-hovered);
+						cursor: pointer;
+					}
+
+					&::before {
+						content: "";
+						position: absolute;
+						top: 50%;
+						left: 15px;
+
+						-webkit-transform: translateY(-50%);
+						transform: translateY(-50%);
+
+						height: 20px;
+						width: 20px;
+						background: url(/public/images/search.svg) no-repeat center /
+							contain;
+
+						vertical-align: middle;
+					}
+
+					&.tupi_class {
+						align-items: center;
+						display: flex;
+						justify-content: space-between;
+
+						padding: 16px 4px 8px 16px;
+
+						h2 {
+							color: var(--text-primary);
+							font-family: Inter;
+							font-size: 1rem;
+							font-weight: 500;
+							line-height: 1.2em;
+						}
+
+						&::before {
+							display: none;
+						}
+					}
 				}
 			}
 		}
@@ -353,7 +495,173 @@ header {
 		}
 
 		.cart {
+			cursor: pointer;
 			margin-right: 0;
+			@mixin conditional-display {
+				&[data-elems] {
+					&::after {
+						display: flex;
+					}
+				}
+
+				&:not([data-elems]) {
+					&::after {
+						display: none;
+					}
+				}
+			}
+
+			@include conditional-display;
+			&::after {
+				content: attr(data-elems);
+
+				width: 20px;
+				height: 20px;
+
+				background: #7000ff;
+				border-radius: 2px;
+				font-size: 0.75rem;
+				color: #fff;
+				font-family: Inter;
+
+				justify-content: center;
+				align-items: center;
+			}
+
+			.modal__cart {
+				cursor: auto;
+				max-width: 500px;
+				padding-top: 15px;
+				position: absolute;
+				right: 0;
+				top: 28px;
+				width: 30vw;
+				z-index: 1010;
+
+				display: none;
+
+				&.show {
+					display: block;
+				}
+
+				.incart {
+					display: flex;
+					flex-direction: column;
+
+					gap: 10px;
+
+					background: #fff;
+					list-style: none;
+
+					box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+						0 6px 6px rgba(0, 0, 0, 0.23) !important;
+					overflow: hidden;
+					border: 0;
+					background-color: var(--background-tertiary);
+					border-radius: 2px;
+					transition: box-shadow 0.3s ease;
+
+					a {
+						text-decoration: none;
+						color: inherit;
+					}
+
+					.inbox {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						gap: 10px;
+
+						transition: all 0.25s;
+
+						padding: 10px 15px;
+
+						&:hover {
+							background-color: var(
+								--button-tertiary-neutral-onprimary-hovered
+							);
+						}
+
+						img {
+							width: 30px;
+							height: 40px;
+							object-fit: contain;
+						}
+
+						.info {
+							flex-grow: 1;
+							overflow-x: hidden;
+
+							display: flex;
+							flex-direction: column;
+
+							p {
+								font-size: 14px;
+								font-family: Inter;
+								font-weight: 500;
+
+								width: 100%;
+								white-space: nowrap;
+								overflow: hidden;
+								text-overflow: ellipsis;
+							}
+
+							span {
+								font-size: 12px;
+								margin-top: 5px;
+								font-family: Inter;
+								font-weight: 700;
+
+								&::after {
+									content: attr(data-elems);
+									margin-left: 5px;
+									font-size: 16px;
+									font-weight: 700;
+									font-family: Inter;
+									color: var(--text-primary);
+								}
+							}
+						}
+
+						button {
+							background: none;
+							border: none;
+						}
+
+						svg {
+							cursor: pointer;
+							fill: var(--text-primary);
+							height: 24px;
+							width: 24px;
+
+							&:hover {
+								fill: var(--red-30);
+							}
+						}
+					}
+
+					.buy-btn {
+						background-color: var(--button-tertiary-neutral-onprimary-hovered);
+						padding: 15px;
+
+						border: 0;
+
+						cursor: pointer;
+
+						span {
+							background-color: var(--button-primary-accented-rest);
+							border-radius: 2px;
+							color: var(--text-on-color);
+							display: block;
+							opacity: 1;
+							padding: 10px 20px;
+
+							text-decoration: none;
+						}
+					}
+				}
+			}
 		}
 	}
 

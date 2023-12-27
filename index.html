@@ -2,7 +2,6 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Uzum Website</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,8 +11,8 @@
 			rel="stylesheet"
 		/>
 		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
 			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 		/>
 		<link rel="stylesheet" href="/styles/main.scss" />
 	</head>
@@ -78,21 +77,20 @@
 								type="search"
 								name="searchItem"
 								placeholder="Искать товары и категории"
+								id="search"
 							/>
 							<button class="searchIcon">
 								<span class="material-symbols-outlined"> search </span>
 							</button>
 						</div>
 
-						<div class="searchResults">
-							<ul class="results"></ul>
-						</div>
+						<ul class="searchResults"></ul>
 					</div>
 
 					<div class="btn-block">
 						<div class="account">
 							<span class="material-symbols-outlined"> person </span>
-							<p>Войти</p>
+							<p data-name="">Войти</p>
 						</div>
 
 						<div class="liked">
@@ -101,8 +99,12 @@
 						</div>
 
 						<div class="cart">
-							<span class="material-symbols-outlined">shopping_cart</span>
+							<span class="material-symbols-outlined"> shopping_bag </span>
 							<p>Корзина</p>
+
+							<div class="modal__cart">
+								<ul class="incart"></ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -117,11 +119,75 @@
 		<main>
 			<section class="banner">
 				<div class="wrap">
-					<div class="swiper">
+					<div class="swiper main-swiper">
 						<div class="swiper-wrapper"></div>
 
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-prev">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<g opacity="0.5">
+									<path
+										d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M12 8L8 12L12 16"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M16 12H8"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</g>
+							</svg>
+						</div>
+						<div class="swiper-button-next">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<g opacity="0.5">
+									<path
+										d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M12 16L16 12L12 8"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M8 12L16 12"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</g>
+							</svg>
+						</div>
 						<div class="swiper-pagination"></div>
 					</div>
 				</div>
@@ -135,9 +201,192 @@
 		</main>
 
 		<footer>
-			<div class="wrap"></div>
+			<section class="footer">
+				<div class="wrap">
+					<div class="about-us">
+						<h3>О нас</h3>
+						<a href="#">Пункты выдачи</a>
+						<a href="#">Вакансии</a>
+					</div>
+
+					<div class="users">
+						<h3>Пользователям</h3>
+						<a href="#">Связаться с нами</a>
+						<a href="#">Вопрос - ответ</a>
+					</div>
+
+					<div class="for-entrepreneurs">
+						<h3>Для предпринимателей</h3>
+						<a href="#">Продавайте на Uzum</a>
+						<a href="#">Вход для продавцов</a>
+					</div>
+
+					<div class="social">
+						<h3>Скачать приложение</h3>
+						<div class="download-app">
+							<a href="#" class="appstore">
+								<img src="/public/images/appstore.svg" alt="appstore" />
+								<span>AppStore</span>
+							</a>
+							<a class="googleplay">
+								<img src="/public/images/googleplay.svg" alt="googleplay" />
+								<span>Google Play</span>
+							</a>
+						</div>
+
+						<div class="social-links">
+							<h3>Uzum в соцсетях</h3>
+							<div class="social-links__apps">
+								<a href="#">
+									<img src="/public/images/socials/instagram.svg" alt="" />
+								</a>
+
+								<a href="#">
+									<img src="/public/images/socials/telegram.svg" alt="" />
+								</a>
+
+								<a href="#">
+									<img src="/public/images/socials/youtube.svg" alt="" />
+								</a>
+
+								<a href="#">
+									<img src="/public/images/socials/facebook.svg" alt="" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="footer__second">
+				<div class="wrap">
+					<div class="agreements">
+						<div class="confidentiality">
+							<a href="#">Политика конфиденциальности</a>
+						</div>
+
+						<div class="agreement">
+							<a href="#">Пользовательское соглашение</a>
+						</div>
+					</div>
+
+					<div class="copyright-text">
+						<p>«2023© ООО «UZUM MARKET». ИНН 309376127. Все права защищены»</p>
+					</div>
+				</div>
+			</section>
 		</footer>
 
+		<div class="backdrop"></div>
+		<div class="modal modal__catalog">
+			<div class="modal__content">
+				<span>Категории товаров</span>
+				<ul class="catalog__items"></ul>
+			</div>
+		</div>
+		<div class="modal modal__account">
+			<span class="material-symbols-outlined close"> close </span>
+			<div class="modal__content">
+				<form name="login">
+					<h1>Вход</h1>
+
+					<div class="inputs">
+						<div class="input-wrap">
+							<input
+								type="text"
+								name="name"
+								placeholder="Как вас зовут?"
+								autocomplete="off"
+							/>
+						</div>
+						<label>
+							<div class="input-wrap">
+								<div class="precode">+998</div>
+								<input
+									type="text"
+									name="number"
+									placeholder="00 000-00-00"
+									autocomplete="off"
+								/>
+							</div>
+							<span class="error" data-error__account></span>
+						</label>
+					</div>
+
+					<button type="submit">
+						<p>Войти</p>
+					</button>
+
+					<span>
+						Авторизуясь, вы соглашаетесь с
+						<a href="#">политикой обработки персональных данных</a>
+					</span>
+				</form>
+
+				<div class="control">
+					<h1>Аккаунт</h1>
+
+					<p>Имя: <span data-name></span></p>
+					<p>Телефон: <span data-number></span></p>
+
+					<div class="buttons">
+						<button class="blue" id="edit" type="button">
+							<p>Редактировать</p>
+						</button>
+
+						<button class="danger" id="delete" type="button">
+							<p>Выйти</p>
+						</button>
+					</div>
+				</div>
+
+				<div class="change">
+					<form name="changeCredentials">
+						<h1>Изменить данные</h1>
+						<div class="inputs">
+							<div class="input-wrap">
+								<input
+									type="text"
+									name="name"
+									placeholder="Как вас зовут?"
+									autocomplete="off"
+								/>
+							</div>
+
+							<label>
+								<div class="input-wrap">
+									<div class="precode">+998</div>
+									<input
+										type="text"
+										name="number"
+										placeholder="00 000-00-00"
+										autocomplete="off"
+									/>
+								</div>
+								<span class="error" data-error__account></span>
+							</label>
+						</div>
+
+						<button type="submit">Сохранить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal announcement">
+			<div class="modal__content">
+				<img data-item__img="" src="" alt="" />
+				<div class="info">
+					<p>Товар добавлен в корзину</p>
+					<span data-item__name></span>
+				</div>
+
+				<div class="control">
+					<span class="material-symbols-outlined"> close </span>
+
+					<a href="/pages/cart/" data-item__link>Перейти в корзину</a>
+				</div>
+			</div>
+		</div>
 		<script type="module" src="/scripts/main.js"></script>
 	</body>
 </html>
