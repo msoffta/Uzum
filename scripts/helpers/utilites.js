@@ -112,10 +112,10 @@ export function announce(
 
 export function getColors(data) {
 	let colors = data.map((el) => el.colors);
-	colors = colors.flat()
+	colors = colors.flat();
 	let filtered = Array.from(new Set(colors));
-	
-	return filtered
+
+	return filtered;
 }
 
 export function saveLocal(key, data) {
@@ -129,4 +129,19 @@ export async function getItems(ids) {
 		items.push(itemData.data);
 	}
 	return items;
+}
+
+export async function updateOfferInfo(data, cart) {
+	let total = document.querySelector("[data-total__item]");
+	let totalItems = document.querySelectorAll("[data-count]");
+	let intotal = document.querySelector("[data-total__intotal]");
+	let economy = document.querySelector("[data-economy]");
+
+	total.innerHTML = data.total.toLocaleString("ru-RU");
+	intotal.innerHTML = data.totalWithDiscount.toLocaleString("ru-RU");
+	economy.innerHTML = data.economy.toLocaleString("ru-RU");
+
+	totalItems.forEach((item) => {
+		item.innerHTML = cart.length;
+	});
 }
