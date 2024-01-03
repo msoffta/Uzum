@@ -197,9 +197,9 @@ export async function renderCart(cartArray, place) {
 		counterDiv.append(counterMinus, counter, counterPlus);
 
 		counterMinus.onclick = function () {
-			if (elem.count > 1) {
-				elem.count--;
-				counter.value = elem.count;
+			if (prevCounter > 1) {
+				prevCounter--;
+				counter.value = prevCounter;
 
 				if (item.data.salePercentage) {
 					sale.innerHTML = `${(+(
@@ -224,11 +224,17 @@ export async function renderCart(cartArray, place) {
 					updateOfferInfo({ total, totalWithDiscount, economy }, getCart());
 				}
 			}
+
+			if (prevCounter >= 2) {
+				eachPrice.innerHTML = `${item.data.price} сум / шт`;
+			} else {
+				eachPrice.innerHTML = ``;
+			}
 		};
 
 		counterPlus.onclick = function () {
-			elem.count++;
-			counter.value = elem.count;
+			prevCounter++;
+			counter.value = prevCounter;
 
 			if (item.data.salePercentage) {
 				sale.innerHTML = `${(+(
@@ -245,12 +251,18 @@ export async function renderCart(cartArray, place) {
 				economy += total - totalWithDiscount;
 				updateOfferInfo({ total, totalWithDiscount, economy }, getCart());
 			} else {
-				original.innerHTML = `${(item.data.price * elem.count).toLocaleString(
+				original.innerHTML = `${(item.data.price * prevCounter).toLocaleString(
 					"ru-RU"
 				)} сум`;
 				totalWithDiscount += item.data.price;
 				total += item.data.price;
 				updateOfferInfo({ total, totalWithDiscount, economy }, getCart());
+			}
+
+			if (prevCounter >= 2) {
+				eachPrice.innerHTML = `${item.data.price} сум / шт`;
+			} else {
+				eachPrice.innerHTML = ``;
 			}
 		};
 
@@ -272,7 +284,6 @@ export async function renderCart(cartArray, place) {
 					economy += total - totalWithDiscount;
 					updateOfferInfo({ total, totalWithDiscount, economy }, getCart());
 					prevCounter = counter.value;
-
 				} else {
 					original.innerHTML = `${(
 						item.data.price * counter.value
@@ -282,7 +293,6 @@ export async function renderCart(cartArray, place) {
 					economy += total - totalWithDiscount;
 					updateOfferInfo({ total, totalWithDiscount, economy }, getCart());
 					prevCounter = counter.value;
-
 				}
 			} else if (counter.value < prevCounter) {
 				if (item.data.salePercentage) {
@@ -311,6 +321,12 @@ export async function renderCart(cartArray, place) {
 					updateOfferInfo({ total, totalWithDiscount, economy }, getCart());
 					prevCounter = counter.value;
 				}
+			}
+
+			if (prevCounter >= 2) {
+				eachPrice.innerHTML = `${item.data.price} сум / шт`;
+			} else {
+				eachPrice.innerHTML = ``;
 			}
 		};
 
@@ -489,10 +505,12 @@ export async function renderCart(cartArray, place) {
 				}
 			}
 
-			console.log(counter.value >= elem.count, counter.value <= elem.count);
-			
-			
-		}
+			if (prevCounter >= 2) {
+				eachPrice.innerHTML = `${item.data.price} сум / шт`;
+			} else {
+				eachPrice.innerHTML = ``;
+			}
+		};
 	}
 	total = parseInt(total);
 	totalWithDiscount = parseInt(totalWithDiscount);

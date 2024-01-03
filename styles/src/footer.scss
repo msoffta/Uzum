@@ -5,6 +5,7 @@ footer {
 		.wrap {
 			display: flex;
 			align-items: flex-start;
+			justify-content: space-between;
 
 			padding-top: 24px;
 
@@ -32,15 +33,7 @@ footer {
 				}
 			}
 
-			.about-us,
-			.users {
-				margin-right: 180px;
-			}
-
-			.for-entrepreneurs {
-				margin-right: 80px;
-			}
-
+			
 			.social {
 				h3 {
 					color: var(--text-primary);

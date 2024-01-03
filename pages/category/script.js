@@ -123,6 +123,10 @@ window.onload = function () {
 
 		colorInputs.forEach((input) => {
 			input.oninput = function () {
+				colorInputs.forEach((input) => {
+					input.checked = false;
+				});
+				this.checked = true;
 				filters.color = this.value;
 				saveLocal("filters", filters);
 				renderItems(resource.data, filters, itemsPlace, cartPlace, cart);

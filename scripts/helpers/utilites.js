@@ -12,6 +12,12 @@ export function backdropClear(toClose, backdrop, body) {
 	});
 	backdrop.classList.remove("show", "top");
 	body.classList.remove("modal_lock");
+
+	if (getUser()) {
+		document.querySelector(".modal__account").dataset.logged = "true";
+	} else {
+		document.querySelector(".modal__account").dataset.logged = "false";
+	}
 }
 
 export function backdropLaunch(toShow, backdrop, body) {

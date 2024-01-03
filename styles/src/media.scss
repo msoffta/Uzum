@@ -1,11 +1,302 @@
-@media screen and (max-width: 1200px) {
+@media (max-width: 1300px) {
+	.categoryMain {
+		aside {
+			width: auto !important;
+		}
+		.wrap {
+			flex-direction: column !important;
+
+			.filters {
+				display: flex;
+				gap: 25px;
+				align-items: flex-end;
+				flex-wrap: wrap;
+				.price {
+					flex-shrink: 0;
+				}
+
+				.colors {
+					.sel__list {
+						flex-direction: row;
+					}
+				}
+
+				.sortby {
+					flex-shrink: 0;
+					
+				}
+			}
+		}
+	}	
 }
 
-@media screen and (max-width: 992px) {
+@media (max-width: 1200px) {
+	.place__items,
+	.items-list {
+		grid-template-columns: repeat(4, 1fr) !important;
+	}
+
+	.modal__account .change {
+		left: 155%;
+	}
+
+	.content {
+		flex-direction: column;
+
+		.makeOffer {
+			width: auto !important;
+		}
+	}
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 992px) {
+	.free-day {
+		display: none;
+	}
+
+	.account > p,
+	.liked > p,
+	.cart > p {
+		display: none;
+	}
+
+	.blockOfItems {
+		.for-one {
+			margin-left: 25px;
+		}
+		.color {
+			width: auto !important;
+		}
+	}
+
+	.curItem {
+		.wrap {
+			flex-direction: column !important;
+		}
+	}
+
+	.categoryMain {
+		.items {
+			grid-template-columns: repeat(3, 1fr) !important;
+		}
+	}
 }
 
-@media screen and (max-width: 576px) {
+@media (max-width: 768px) {
+	.place__items,
+	.items-list {
+		grid-template-columns: repeat(3, 1fr) !important;
+	}
+
+	.banner .swiper img {
+		height: 70% !important;
+	}
+
+	.header__first {
+		display: none !important;
+	}
+
+	.header__second {
+		.wrap {
+			flex-direction: column;
+		}
+
+		.dropdown {
+			display: none !important;
+		}
+
+		.search {
+			margin-top: 15px;
+			width: 100% !important;
+			margin-right: 0 !important;
+		}
+
+		.account {
+			display: none !important;
+		}
+
+		.liked {
+			display: none !important;
+		}
+
+		.cart {
+			display: none !important;
+		}
+	}
+
+	.sidebar {
+		display: block;
+	}
+
+	.toUP {
+		bottom: 75px !important;
+	}
+
+	.modal__catalog {
+		top: 110px;
+	}
+
+	.backdrop {
+		top: 110px;
+	}
+
+	.categoryMain {
+		.items {
+			grid-template-columns: repeat(2, 1fr) !important;
+		}
+	}
 }
+
+@media (max-width: 576px) {
+	// .sidebar {
+	// 	display: none !important;
+	// }
+
+	.modal__catalog .modal__content {
+		width: auto !important;
+	}
+
+	.sidebar {
+		.wrap {
+			padding: 10px 5px !important;
+		}
+	}
+
+	.banner {
+		.swiper {
+			.swiper-slide {
+				flex-direction: column-reverse;
+				.info {
+					.title {
+						display: none !important;
+					}
+
+					.description {
+						display: none !important;
+					}
+				}
+			}
+		}
+	}
+	.place__items,
+	.items-list {
+		grid-template-columns: repeat(1, 1fr) !important;
+	}
+
+	.footer {
+		.wrap {
+			flex-direction: column !important;
+			align-items: center !important;
+			gap: 25px !important;
+			* {
+				text-align: center !important;
+			}
+		}
+	}
+
+	.footer__second {
+		.wrap {
+			flex-direction: column !important;
+		}
+	}
+
+	.modal__account {
+		padding: 15px !important;
+
+		.agreements {
+			margin-top: 12px !important;
+			display: block !important;
+			width: 100% !important;
+			text-align: center !important;
+		}
+
+		.control,
+		form[name="login"],
+		.change {
+			width: 280px !important;
+
+			form {
+				width: 100% !important;
+
+				h1 {
+					margin-top: 12px;
+					font-size: 30px;
+				}
+			}
+
+			.buttons {
+				flex-direction: column !important;
+
+				button {
+					width: 100% !important;
+				}
+			}
+		}
+	}
+
+	.announcement {
+		background: #000;
+		width: 60%;
+
+		img {
+			display: none;
+		}
+
+		span {
+			display: none;
+		}
+
+		.modal__content {
+			justify-content: center;
+
+			p {
+				color: #fff;
+			}
+		}
+
+		.control {
+			display: none !important;
+		}
+	}
+
+	.blockOfItems {	
+
+		.for-one {
+			margin: 0 !important;
+		}
+
+		.cost {
+			margin-top: 25px !important;
+			text-align: center !important;
+			justify-content: center !important;
+		}
+	}
+
+	.verticalSwiper {
+		display: none !important;
+	}
+
+	.categoryMain {
+		.items {
+			grid-template-columns: repeat(1, 1fr) !important;
+		}
+	}
+
+	.price {
+		width: 100%;
+		.sel__range {
+			flex-wrap: wrap !important;
+
+			.input-wrapper {
+				width: 100% !important;
+			}
+		}
+	}
+
+	.colors {
+		.sel__list {
+			flex-wrap: wrap;
+		}
+	}
+}
+
