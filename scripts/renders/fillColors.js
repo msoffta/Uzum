@@ -11,7 +11,7 @@ export function fillColors(colors, place) {
 	input.id = "all";
 	li.classList.add("color");
 	li.dataset.color = "all";
-	li.style.setProperty("--color", "url(/public/images/color-wheel.png)");
+	li.style.setProperty("--color", "url(/images/color-wheel.png)");
 	label.innerHTML = "Все цвета";
 	label.htmlFor = "all";
 

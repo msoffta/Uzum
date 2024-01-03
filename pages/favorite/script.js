@@ -41,7 +41,7 @@ window.onload = async function () {
 		let message = document.createElement("p");
 		let tip = document.createElement("span");
 
-		img.src = "/public/images/hearts.png";
+		img.src = "/images/hearts.png";
 		img.alt = "no Liked";
 
 		message.innerHTML = "Добавьте то, что понравилось";

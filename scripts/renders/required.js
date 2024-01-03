@@ -146,11 +146,11 @@ export function makeFooter() {
 						<h3>Скачать приложение</h3>
 						<div class="download-app">
 							<a href="#" class="appstore">
-								<img src="/public/images/appstore.svg" alt="appstore" />
+								<img src="/images/appstore.svg" alt="appstore" />
 								<span>AppStore</span>
 							</a>
 							<a class="googleplay">
-								<img src="/public/images/googleplay.svg" alt="googleplay" />
+								<img src="/images/googleplay.svg" alt="googleplay" />
 								<span>Google Play</span>
 							</a>
 						</div>
@@ -159,19 +159,19 @@ export function makeFooter() {
 							<h3>Uzum в соцсетях</h3>
 							<div class="social-links__apps">
 								<a href="#">
-									<img src="/public/images/socials/instagram.svg" alt="" />
+									<img src="/images/socials/instagram.svg" alt="" />
 								</a>
 
 								<a href="#">
-									<img src="/public/images/socials/telegram.svg" alt="" />
+									<img src="/images/socials/telegram.svg" alt="" />
 								</a>
 
 								<a href="#">
-									<img src="/public/images/socials/youtube.svg" alt="" />
+									<img src="/images/socials/youtube.svg" alt="" />
 								</a>
 
 								<a href="#">
-									<img src="/public/images/socials/facebook.svg" alt="" />
+									<img src="/images/socials/facebook.svg" alt="" />
 								</a>
 							</div>
 						</div>

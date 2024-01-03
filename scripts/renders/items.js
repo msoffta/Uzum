@@ -55,13 +55,13 @@ export async function renderAutoItems(
 
 		ratingWrap.classList.add("rating");
 		ratingStar.classList.add("rating-star");
-		ratingStar.src = "/public/images/rating.svg";
+		ratingStar.src = "/images/rating.svg";
 		ratingStar.alt = "star";
 
 		rating.innerHTML = `${item.rating}`;
 
 		addCart.classList.add("add-cart");
-		addCartImg.src = "/public/images/add-cart.svg";
+		addCartImg.src = "/images/add-cart.svg";
 		addCartImg.alt = "add-cart";
 
 		if (item.salePercentage) {
@@ -252,13 +252,13 @@ export function renderItems(items, filters, place, cartPlace, cartButton) {
 
 		ratingWrap.classList.add("rating");
 		ratingStar.classList.add("rating-star");
-		ratingStar.src = "/public/images/rating.svg";
+		ratingStar.src = "/images/rating.svg";
 		ratingStar.alt = "star";
 
 		rating.innerHTML = `${item.rating}`;
 
 		addCart.classList.add("add-cart");
-		addCartImg.src = "/public/images/add-cart.svg";
+		addCartImg.src = "/images/add-cart.svg";
 		addCartImg.alt = "add-cart";
 
 		if (item.salePercentage) {

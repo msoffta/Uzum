@@ -91,7 +91,7 @@ main {
 
 						[data-color="all"] {
 							&::before {
-								background: url("/public/images/color-wheel.png") no-repeat
+								background: url("/images/color-wheel.png") no-repeat
 									center / contain !important;
 							}
 						}
@@ -171,7 +171,7 @@ main {
 							width: 24px;
 							height: 24px;
 
-							background: url("/public/images/expand_more.svg") no-repeat center /
+							background: url("/images/expand_more.svg") no-repeat center /
 								contain;
 						}
 
