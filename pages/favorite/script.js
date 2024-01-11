@@ -22,7 +22,7 @@ window.onload = async function () {
 	let cart = getCart();
 
 	let items = await getItems(favorites);
-	if (favorites.length > 1) {
+	if (favorites.length > 0) {
 		renderItems(items, null, place, cartPlace, cart);
 
 		let likes = document.querySelectorAll(".like");
