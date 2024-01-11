@@ -25,7 +25,7 @@ window.onload = function () {
 	get(`/goods?type=${type}`).then((resource) => {
 		let filtersSaved = JSON.parse(localStorage.getItem("filters")) || null;
 		let filters = {
-			color: "",
+			color: "all",
 			sortBy: "",
 			price: {
 				from: 1000,
